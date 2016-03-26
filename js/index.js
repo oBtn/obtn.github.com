@@ -50,6 +50,13 @@ document.addEventListener('DOMContentLoaded',function(){
 				}
 			},30);
 		};
+		ev.preventDefault&&preventDefault();
 		return false;
 	};
+	;(function(){
+		var oBtn = document.getElementById('btn');
+		oBtn.addEventListener('click',function(){
+			window.open('scroll.html');	
+		},false);			
+	})();
 },false);
