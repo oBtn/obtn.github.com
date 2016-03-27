@@ -2,12 +2,95 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>walter</title>
+<title>一个码农的独白</title>
+<link href="css/common.css" rel="stylesheet" />
 <link href="css/index.css" rel="stylesheet" />
+<script src="js/jquery-1.7.2.js"></script>
+<script src="js/myjquery.js"></script>
 <script src="js/index.js"></script>
 </head>
 <body>
-	<input id="btn" type="button" value="跳转到" />
-	<div class="box"></div>
+	<div class="box">
+    	<div class="sudoku clearFix">
+    	<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    </div>
+    	<div class="flash" id="flash">
+        	<div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="two"></div>
+            <div class="two"></div>
+            <div class="two"></div>
+        </div>       
+        <div id="all" class="all">
+            <div class="card" id="card">
+                <div class="card_on">
+                    <h3>01</h3>
+                    <b ></b>
+                    <div class="card-title">名片</div>
+                    <div class="card-bg" id="card-bg"></div>
+                </div>
+                <div class="card-show" id="card-show">
+                    <div>                	
+                        &lt;card&gt;
+                        <ul>
+                            <li>
+                                <b>&lt;name&gt;</b>
+                                <strong>赵丹</strong>
+                                <span>&lt;/name&gt;</span>
+                            </li>
+                            <li>
+                                <b>&lt;电话&gt;</b>	
+                                <strong name="replace">&nbsp;&nbsp;18615182359</strong>
+                                <span>&lt;/电话&gt;</span>
+                            </li>
+                            <li>
+                                <b>&lt;email&gt;</b>
+                                <strong name="replace">itwalter@sina.com</strong>
+                                <span>&lt;/email&gt;</span>
+                            </li>
+                            <li>
+                                <b>&lt;qq&gt;</b>
+                                <strong>&nbsp;&nbsp;&nbsp;&nbsp;772886648</strong>
+                                <span>&lt;/qq&gt;</span>
+                            </li>
+                        </ul>  
+                            &lt;/card&gt;                              
+                    </div>
+                    <div class="card-bottom">
+                    </div>
+                </div>
+            </div>
+            <div class="skill" id="skill">
+                <div class="skill_on">
+                    <h3>02</h3>
+                    <b></b>
+                    <div class="skill-title">技能</div>
+                    <div class="skill-bg"></div>
+                </div>
+                <div class="skill-show">
+                    <div class="skill-js"></div>
+                    <div class="skill-css3"></div>
+                    <div class="skill-jq"></div>
+                    <div class="skill-ajax"></div>
+                    <div class="skill-html5"></div>
+                    <div class="skill-css"></div>
+                    <div class="skill-dw"></div>
+                    <div class="skill-ps"></div>
+                </div>
+            </div>
+            <div class="case" id="case">
+                <a href="case.html">
+                    <div class="case_on">
+                        <h3>03</h3>
+                        <b></b>
+                        <div class="case-title">案例</div>
+                        <div class="case-bg"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

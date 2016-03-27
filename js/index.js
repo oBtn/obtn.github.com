@@ -1,62 +1,170 @@
-document.addEventListener('DOMContentLoaded',function(){
-	var oBox = document.querySelector('.box');
-	var N = 11;
-	var iSpeedX = 0;
-	var lastX = 0;
-	var iSpeedY = 0;
-	var lastY = 0;
-	var timer = null;
-	for(var i=0;i<N;i++){
-		var oS = document.createElement('span');
-		oS.style.background = 'url(images/'+(i+1)+'.jpg)';
-		oBox.appendChild(oS);
-		
-		
-		oS.style.WebkitTransition = '1s all ease '+(N-i)*300+'ms';
-		(function(oS,i){
-			setTimeout(function(){
-				oS.style.WebkitTransform = 'rotateY('+360/N*i+'deg) translateZ(350px)';
-			},0);
-		})(oS,i);
-	}
-	
-	var y = 0;
-	var x = 0;
-	oBox.onmousedown=function(ev){
-		var disX = ev.clientX-y;
-		var disY = ev.clientY-x;
-		document.onmousemove=function(ev){
-			y = ev.clientX-disX;
-			x = ev.clientY-disY;
-			oBox.style.WebkitTransform ='perspective(800px) rotateX('+-x/10+'deg) rotateY('+y/10+'deg)';
-			iSpeedX = ev.clientX-lastX;
-			lastX = ev.clientX;
-			iSpeedY = ev.clientY-lastY;
-			lastY = ev.clientY;
-		};
-		document.onmouseup=function(){
-			document.onmousemove=null;
-			document.onmouseup=null;
-			oBox.timer = setInterval(function(){
-				iSpeedX*=0.95;
-				y+=iSpeedX;
-				iSpeedY*=0.95;
-				x+=iSpeedY;
-				oBox.style.WebkitTransform ='perspective(800px) rotateX('+-x/10+'deg) rotateY('+y/10+'deg)';
-				if(Math.abs(iSpeedX)<1)iSpeedX=0;
-				if(Math.abs(iSpeedY)<1)iSpeedY=0;
-				if(iSpeedX==0&&iSpeedY==0){
-					clearInterval(oBox.timer);
+'use strict'
+addReady(function(){
+	var oAll = document.getElementById('all');
+	var aDiv = oAll.children;
+	var oAbout = document.getElementById('about');
+	var oCard = document.getElementById('card');
+	var oSkill = document.getElementById('skill');
+	var oCase = document.getElementById('case');
+	var oH3 = oAll.getElementsByTagName('h3');
+	var oCardShow = document.getElementById('card-show');
+	window.onload=window.onresize=function(){	
+		;(function(){
+			var arr = []
+			var iNum = null;
+			while(arr.length<4){
+				iNum = rnd(1,(document.documentElement.clientWidth/100-3));
+				if(!findInArr(iNum,arr)){
+					arr.push(iNum);
 				}
-			},30);
-		};
-		ev.preventDefault&&preventDefault();
-		return false;
-	};
+			};
+			arr.sort(function(){
+				return 0.5-Math.random();	
+			});
+			//alert(arr);
+			function setPostion(obj,n){	
+				obj.style.left = (n*100) + 'px';
+				obj.style.top = rnd(1,parseInt(document.documentElement.clientHeight/100-1))*100 +'px';
+			}
+			for(var i=0;i<arr.length;i++){
+				;(function(i){
+					setPostion(aDiv[i],arr[i]);
+				})(i);
+			}		
+		})();		
+	};	
 	;(function(){
-		var oBtn = document.getElementById('btn');
-		oBtn.addEventListener('click',function(){
-			window.open('scroll.html');	
-		},false);			
+		var oBody = document.body; 
+		oBody.style.background = 'url(images/bg_'+rnd(1,3)+'.jpg) no-repeat center top';	
 	})();
-},false);
+	;(function(){
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].index=i;
+			aDiv[i].onmouseenter=function(){
+				for(var i=0;i<aDiv.length;i++){
+					startMove(aDiv[i],{opacity:0.6});
+					oH3[i].style.display = 'none';	
+				}
+				oH3[this.index].style.display = 'block';
+				startMove(this,{opacity:1});
+			};
+		}
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].index=i;
+			aDiv[i].onmouseleave=function(){
+				for(var i=0;i<aDiv.length;i++){
+					startMove(aDiv[i],{opacity:1});
+					oH3[i].style.display = 'none';	
+				}
+			};
+		}
+	})();	
+});
+$(function(){
+	var aPos = [];
+	//alert(aPos);
+	$('.card').toggle(function(){
+		aPos = [{"left":$(this).offset().left,top:$(this).offset().top}];	
+		$('.all').children().each(function(index,element){
+			
+			$(element).hide();			
+			$(element).css({'WebkitTransition':'0.5s all ease'}); 
+		});	
+			
+		$(this).show();
+		$(this).css({'left':0,'top':0})			
+		setTimeout(function(){
+			$('.card-show').show();	
+		},500);
+	},function(){
+		$('.all').children().each(function(index,element){
+			$(element).show(); 
+			$(element).css({'WebkitTransition':'.5s all ease'});	
+		});							
+		$('.card-show').hide();
+		$(this).css({'left':aPos[0].left,'top':aPos[0].top});	
+	});
+	var timer= null;
+	$('#skill').toggle(function(){
+		$(this).siblings().hide();
+		$('.skill-show').css({'WebkitTransition':'.5s all ease','opacity':1}).show();	
+	},function(){
+		var _this=$(this);
+		clearTimeout(timer);
+		timer=setTimeout(function(){
+			_this.siblings().show();
+		},500);		
+		$('.skill-show').css({'WebkitTransition':'.5s all ease','opacity':0});	
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
