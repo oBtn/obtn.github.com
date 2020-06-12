@@ -8,7 +8,7 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="manifest" href="/manifest.json">
     <meta name="description" content="不懂996为何物">
-    <link rel="preload" href="/assets/css/0.styles.9e28097e.css" as="style"><link rel="preload" href="/assets/js/app.6b6a02f5.js" as="script"><link rel="preload" href="/assets/js/2.bf14f5c3.js" as="script"><link rel="preload" href="/assets/js/7.b4b61d14.js" as="script"><link rel="preload" href="/assets/js/3.2451efdd.js" as="script"><link rel="prefetch" href="/assets/js/10.d40177c9.js"><link rel="prefetch" href="/assets/js/11.d84cc9cd.js"><link rel="prefetch" href="/assets/js/12.0afb35e6.js"><link rel="prefetch" href="/assets/js/13.15da9c87.js"><link rel="prefetch" href="/assets/js/14.2827031f.js"><link rel="prefetch" href="/assets/js/15.84ea580b.js"><link rel="prefetch" href="/assets/js/4.41643750.js"><link rel="prefetch" href="/assets/js/5.6cb0a696.js"><link rel="prefetch" href="/assets/js/6.8676467c.js"><link rel="prefetch" href="/assets/js/8.b5197d57.js"><link rel="prefetch" href="/assets/js/9.9c120bc4.js">
+    <link rel="preload" href="/assets/css/0.styles.9e28097e.css" as="style"><link rel="preload" href="/assets/js/app.a7373f9b.js" as="script"><link rel="preload" href="/assets/js/2.bf14f5c3.js" as="script"><link rel="preload" href="/assets/js/7.a49fa6fc.js" as="script"><link rel="preload" href="/assets/js/3.2451efdd.js" as="script"><link rel="prefetch" href="/assets/js/10.d40177c9.js"><link rel="prefetch" href="/assets/js/11.a7ff7283.js"><link rel="prefetch" href="/assets/js/12.901eb195.js"><link rel="prefetch" href="/assets/js/13.15da9c87.js"><link rel="prefetch" href="/assets/js/14.87359e8c.js"><link rel="prefetch" href="/assets/js/15.84ea580b.js"><link rel="prefetch" href="/assets/js/4.41643750.js"><link rel="prefetch" href="/assets/js/5.6cb0a696.js"><link rel="prefetch" href="/assets/js/6.8676467c.js"><link rel="prefetch" href="/assets/js/8.2efa3f2e.js"><link rel="prefetch" href="/assets/js/9.038443c3.js">
     <link rel="stylesheet" href="/assets/css/0.styles.9e28097e.css">
   </head>
   <body>
@@ -392,8 +392,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;我是延时任务&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-</code></pre></div><p>上面代码的执行顺序是: 我是promise任务、我是同步任务、resolved、我是延时任务。</p> <p>Promise 新建后立即执行，立即 <code>resolve</code> 的 Promise 对象，是在本轮“事件循环”（event loop）的结束时,而不是在下一轮“事件循环”的开始时;setTimeout在下一轮“事件循环”开始时执行。</p> <h4 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h4> <p>在面试中, 很多问题并没有真正的答案,至于知识点能掌握到什么样的程度,都需要靠自己不断的学习积累, 在开发中不断的使用也是加深对知识点理解的方式。由于个人精力有限，只是针对一些常遇到的面试题，做了一些浅显的答案解析，希望对大家有所帮助吧。</p> <p>觉得本文对你有帮助？请分享给更多人</p> <p><img src="http://upload-images.jianshu.io/upload_images/4986060-6c581a6675020c09?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="关注公众，获取更多提升前端技能文章"></p> <p><em>欢迎大家关注我的公众号——程序员成长指北。请自行微信搜索——“程序员成长指北”</em></p> <p>上一篇文章:
-<a href="/interview/css.html">web前端高频面试题--css篇</a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><p>上面代码的执行顺序是: 我是promise任务、我是同步任务、resolved、我是延时任务。</p> <p>Promise 新建后立即执行，立即 <code>resolve</code> 的 Promise 对象，是在本轮“事件循环”（event loop）的结束时,而不是在下一轮“事件循环”的开始时;setTimeout在下一轮“事件循环”开始时执行。</p> <h4 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h4> <p>在面试中, 很多问题并没有真正的答案,至于知识点能掌握到什么样的程度,都需要靠自己不断的学习积累, 在开发中不断的使用也是加深对知识点理解的方式。由于个人精力有限，只是针对一些常遇到的面试题，做了一些浅显的答案解析，希望对大家有所帮助吧。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/interview/css.html" class="prev">
         CSS篇
@@ -402,6 +401,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
-    <script src="/assets/js/app.6b6a02f5.js" defer></script><script src="/assets/js/2.bf14f5c3.js" defer></script><script src="/assets/js/7.b4b61d14.js" defer></script><script src="/assets/js/3.2451efdd.js" defer></script>
+    <script src="/assets/js/app.a7373f9b.js" defer></script><script src="/assets/js/2.bf14f5c3.js" defer></script><script src="/assets/js/7.a49fa6fc.js" defer></script><script src="/assets/js/3.2451efdd.js" defer></script>
   </body>
 </html>
