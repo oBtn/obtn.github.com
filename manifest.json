@@ -1,0 +1,7 @@
+{
+  "name": "koala_blog",
+  "short_name": "blog",
+  "version": "1.0.0",
+  "description": "程序员成长指北博主, koala的博客",
+  "manifest_version": 2
+}
